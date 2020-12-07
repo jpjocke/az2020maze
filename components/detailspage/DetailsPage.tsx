@@ -3,6 +3,7 @@ import {Text, StyleSheet, View} from 'react-native';
 import {RouteProp} from '@react-navigation/native';
 import {Show} from "../../model/SearchResult";
 import {RootStackParamList} from "../../model/Navigation";
+import {colorPrimary1} from "../../model/StylingConstants";
 
 export interface DetailsPageProps {
     show: Show
@@ -20,9 +21,8 @@ const DetailsPage = (props: DetailsPageProps) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: colorPrimary1,
+        alignItems: 'center'
     },
 });
 
