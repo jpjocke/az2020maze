@@ -19,6 +19,5 @@ export default function App() {
                 <Stack.Screen name="Details" component={DetailsPage}/>
             </Stack.Navigator>
         </NavigationContainer>
-
     );
 }

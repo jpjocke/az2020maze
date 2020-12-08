@@ -12,24 +12,36 @@ import {
     sizeS,
     pageContainer
 } from "../../model/StylingConstants";
+import ErrorBar from "./components/ErrorBar";
 
 export interface SearchPageProps {
-    networkHandler: NetworkHandler;
+    networkHandler: NetworkHandler,
     navigation: SearchNavigation
 }
 
 const SearchPage = (props: SearchPageProps) => {
     const [query, setQuery] = useState<string>('');
     const [shows, setShows] = useState<ReadonlyArray<Show>>([]);
+    const [errorMsg, setErrorMsg] = useState<string>('');
 
     const search = () => {
-        props.networkHandler.search(query).then(result => {
-            setShows(result.shows.map(value => value.show));
-        });
+        props.networkHandler.search(query)
+            .then(result => {
+                setShows(result.shows.map(value => value.show));
+                if (result.shows.length === 0) {
+                    setErrorMsg('No shows found');
+                }
+            })
+            .catch((error) => {
+                setErrorMsg('Unable to get the result');
+            });
     };
 
     return (
         <View style={styles.container}>
+            <ErrorBar message={errorMsg} onDismiss={() => {
+                setErrorMsg('');
+            }}/>
             <View style={styles.searchBar}>
                 <TextInput
                     style={styles.text}
