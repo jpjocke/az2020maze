@@ -1,8 +1,9 @@
+export const white = '#FFFFFF';
 
 export const colorPrimary0= '#1D598A';	// Main Primary color */
 export const colorPrimary1 = '#B4CFE6';
 export const color_primary_2 = '#4B7BA3';
-export const color_primary_3 = '#07355B';
+export const colorPrimary3 = '#07355B';
 export const colorPrimary4 = '#000C16';
 
 export const color_secondary_1_0 = '#2B2996';	// Main Secondary color (1) */
@@ -34,3 +35,12 @@ export const textSizeS = 12;
 export const textSizeM = 24;
 
 export const itemHeight = 90;
+
+export const mediumImageSize = {
+    width: 210,
+    height: 295
+};
+export const pageContainer = {
+    flex: 1,
+    backgroundColor: white
+};

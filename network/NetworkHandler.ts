@@ -24,21 +24,14 @@ export default class NetworkHandler {
         const result: Promise<SearchResult> = new Promise((resolve, reject) => {
             Axios.get(url)
                 .then(function (response) {
-                    // handle success
-                    console.log(response);
                     const value = {shows: response.data};
                     cache.set(query, value);
                     resolve(value);
 
                 })
                 .catch(function (error) {
-                    // handle error
-                    console.log(error);
                     reject();
                 })
-                .then(function () {
-                    // always executed
-                });
         });
 
         return result;

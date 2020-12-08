@@ -16,12 +16,15 @@ I am currently on parental leave. Caring for my son does not give me much time t
 ## Things to improve
 ### network/cache
 Should be a database for offline cached content. Timeout could probably be quite high(delete after a few days) as the data is not expected to change much.
+Images should be downloaded and cached for some time.
 
 ### Tests
 More tests, 100% code coverage would be preferred.
 
 ### Styling
 I would have added a third party styling library, like Styled components.
+Themes could have been used for colors and sizes.
+I would also have put more effort into the design of the app.
 
 # Questions
 - Nice to have features: Endless or pagination.

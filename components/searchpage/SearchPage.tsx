@@ -6,12 +6,11 @@ import ShowList from "./components/ShowList";
 import {SearchNavigation} from "../../model/Navigation";
 import {
     colorPrimary4,
-    colorPrimary1,
     sizeM,
-    colorSecondary2_0,
     textSizeM,
     sizeL,
-    sizeS
+    sizeS,
+    pageContainer
 } from "../../model/StylingConstants";
 
 export interface SearchPageProps {
@@ -24,7 +23,6 @@ const SearchPage = (props: SearchPageProps) => {
     const [shows, setShows] = useState<ReadonlyArray<Show>>([]);
 
     const search = () => {
-        console.log(query);
         props.networkHandler.search(query).then(result => {
             setShows(result.shows.map(value => value.show));
         });
@@ -51,9 +49,8 @@ const SearchPage = (props: SearchPageProps) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: colorPrimary1,
-        alignItems: 'center',
+        ...pageContainer,
+        alignItems: 'center'
     },
     searchBar: {
         flexDirection: 'row',
@@ -64,9 +61,6 @@ const styles = StyleSheet.create({
         height: sizeL,
         color: colorPrimary4,
         marginRight: sizeS
-    },
-    button: {
-        backgroundColor: colorSecondary2_0,
     }
 });
 
