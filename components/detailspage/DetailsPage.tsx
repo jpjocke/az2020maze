@@ -28,6 +28,9 @@ const DetailsPage = (props: DetailsPageProps) => {
      * @param summary Summary on the show.
      */
     const cleanSummary = (summary: string): string => {
+        if (!summary) {
+            return '';
+        }
         const someTags = new RegExp('<.{1,10}?>', 'g');
         return summary.replaceAll(someTags, '');
     };
